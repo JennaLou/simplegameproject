@@ -1,11 +1,16 @@
+// randomNumber returns a random number between min and max
+function randomNumber(min,max)
+{
+ return Math.floor(Math.random()*(max-min+1)+min);
+}
+var  foodEaten = 0;
 ////////////////////////////bird's movement///////////////////
 document.addEventListener("keydown", function(e){
  var birdSpotX = Number(document.getElementById("bird").getAttribute("x"));
  var birdSpotY = Number(document.getElementById("bird").getAttribute("y"));
- var foodX = Number(document.getElementById("foodfirst").getAttribute("x"));
- var foodY = Number(document.getElementById("foodfirst").getAttribute("y"));
  var width = 65;
  var height = 65;
+
 
  if (e.keyCode == 37) {
    document.getElementById("bird").setAttribute("x", birdSpotX - 15)
@@ -26,18 +31,29 @@ document.addEventListener("keydown", function(e){
   birdSpotY = birdSpotY + 15;
  }
 
-if (birdSpotX > foodX && birdSpotX < foodX + 65 && birdSpotY > foodY && birdSpotY < foodY + 65){
-console.log("overlap")
-}
+//////////////////////////////////overlap//////////////////////////////////////////////////////
+
+ var foodX = Number(document.getElementById("foodfirst").getAttribute("x"));
+ var foodY = Number(document.getElementById("foodfirst").getAttribute("y"));
+
+ if (birdSpotX > foodX && birdSpotX < foodX + 65 && birdSpotY > foodY && birdSpotY < foodY + 65){
+  var randX = randomNumber(30,500)
+  document.getElementById("foodfirst").setAttribute("x", randX)
+  foodEaten = foodEaten+1
+  document.getElementById("score").textContent = foodEaten
+ console.log("overlap")
+};
 
 //second ovverlap
 
-var foodX = Number(document.getElementById("foodsecond").getAttribute("x"));
-var foodY = Number(document.getElementById("foodsecond").getAttribute("y"));
+foodX = Number(document.getElementById("foodsecond").getAttribute("x"));
+foodY = Number(document.getElementById("foodsecond").getAttribute("y"));
 
  if (birdSpotX > foodX && birdSpotX < foodX + 65 && birdSpotY > foodY && birdSpotY < foodY + 65){
+   randX = randomNumber(30,500)
+   document.getElementById("foodsecond").setAttribute("x", randX)
+   foodEaten = foodEaten+1
+   document.getElementById("score").textContent = foodEaten
  console.log("overlap")
-}
+};
  })
-
-/////////////////////////////////////////overlap/////////////////////////////////////////

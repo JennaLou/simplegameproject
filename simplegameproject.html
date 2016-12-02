@@ -3,13 +3,13 @@
   <head>
     <meta charset="utf-8">
     <link rel="stylesheet" href="simplegameproject.css">
-    <link href="https://fonts.googleapis.com/css?family=Bungee" rel="simplegameproject.css">
+    <link href="https://fonts.googleapis.com/css?family=Bungee" rel="stylesheet">
     <h1></h1>
 
   </head>
   <body>
     <!-- page content -->
-      <svg width="100%" width="900" height="500" xlink:href="http://www.clipartbest.com/cliparts/pi5/MAR/pi5MAREkT.jpeg">
+      <svg id="screen"width="100%" width="900" height="500" xlink:href="http://www.clipartbest.com/cliparts/pi5/MAR/pi5MAREkT.jpeg">
         <image id="bird" x="150" y="200" width="120" height="120" xlink:href="http://www.clipartbest.com/cliparts/nTB/Ba6/nTBBa6GTA.gif"/>
         <image id="foodfirst" x="900" y="200" width="65" height="65" xlink:href="http://images.clipartpanda.com/tuna-clipart-yToergdEc.png">
         <animate id="food1" attributeName="y" from="500" to="30" dur="20s" begin="food2.end"/>
@@ -19,8 +19,14 @@
      <animate id="food1" attributeName="y" from="500" to="30" dur="20s" begin="food2.end"/>
   <animate id="food2" attributeName="y" from="30" to="500" dur="20s" begin="0s; food1.end"/>
    </image>
-   <text id="score" x="1210" y="150" font-family: 'Bungee', cursive font-size="20" >0</text>
-   <text id="score" x="1030" y="150" font-family: 'Bungee', cursive font-size="20" >Food Eaten:</text>
+   <text id="score" x="1230" y="150">0</text>
+   <text id="foodEaten"x="1020" y="150">Food Eaten:</text>
+   <text id="simpleGame"x="600" y="50">Simple Game</text>
+   <text id="thing" x="1020" y="190">Total time:</text>
+   <text id="totaltime" x="1230" y="190" >0</text>
+   <text id="gg" x="85" y="400" fill="black" font-size="75" opacity="0">GAME OVER</text>
+
+
       </svg>
   </body>
   <script type="text/javascript" src="simplegameproject.js"></script>

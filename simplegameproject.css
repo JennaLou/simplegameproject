@@ -7,8 +7,34 @@ body {
   background-size: 100%;
 }
 
-text {
+
+
+#score {
+    font-family: 'Bungee', cursive;
+    font-size: 30px;
+}
+#foodEaten{
+    font-family: 'Bungee', cursive;
+    font-size: 30px;
+}
+#simpleGame {
   font-family: 'Bungee', cursive;
   font-size: 30px;
-  font-weight: bold;
+}
+#score {
+  font-family: 'Bungee', cursive;
+  font-size: 30px;
+}
+#totaltime {
+  font-family: 'Bungee', cursive;
+  font-size: 30px;
+}
+#thing {
+  font-family: 'Bungee', cursive;
+  font-size: 30px;
+}
+#gg
+{
+  font-family: 'Bungee', cursive;
+  font-size: 200px;
 }

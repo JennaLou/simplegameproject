@@ -3,7 +3,10 @@ function randomNumber(min,max)
 {
  return Math.floor(Math.random()*(max-min+1)+min);
 }
-var  foodEaten = 0;
+var timeStop;
+var foodEaten = 0;
+var timeStart  = Date.now()
+var gameOver = false;
 ////////////////////////////bird's movement///////////////////
 document.addEventListener("keydown", function(e){
  var birdSpotX = Number(document.getElementById("bird").getAttribute("x"));
@@ -33,6 +36,8 @@ document.addEventListener("keydown", function(e){
 
 //////////////////////////////////overlap//////////////////////////////////////////////////////
 
+var totaltime;
+
  var foodX = Number(document.getElementById("foodfirst").getAttribute("x"));
  var foodY = Number(document.getElementById("foodfirst").getAttribute("y"));
 
@@ -56,4 +61,18 @@ foodY = Number(document.getElementById("foodsecond").getAttribute("y"));
    document.getElementById("score").textContent = foodEaten
  console.log("overlap")
 };
+
+if (foodEaten >= 5){
+  document.getElementById("screen").pauseAnimations()
+   timeStop = Date.now();
+  document.getElementById("totaltime").textContent = (timeStop - timeStart)/1000;
+  document.getElementById("gg").setAttribute("opacity", "1")
+}
+  if(gameOver == false){
+
+  }
+  else{
+
+  }
+
  })
